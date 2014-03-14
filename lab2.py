@@ -1,21 +1,15 @@
 from math import *
 
 class Poly :
-	coef = []
-	def eval(x, iDerivative=0) :
-		sum = 0
-		for i in range(0, len(coef)-iDerivative) :
-			sum += coef[i+iDerivative]*find_der_mult(i+iDerivative,iDerivative)*(x^i)
-	def find_der_mult(ix,iDerivative) :
-		if iDerivative==0 :
-			return 1
-		return ix*find_der_mult(ix-1,iDerivative-1)
-
-def eval(x, i=0) :
-    if i==0 :
-        return 3*x*x-15*x
-    elif i==1 :
-        return 6*x-15
+    coef = []
+    def eval(x, iDerivative=0) :
+        sum = 0
+        for i in range(0, len(coef)-iDerivative) :
+            sum += coef[i+iDerivative]*find_der_mult(i+iDerivative,iDerivative)*(x^i)
+    def find_der_mult(ix,iDerivative) :
+        if iDerivative==0 :
+            return 1
+        return ix*find_der_mult(ix-1,iDerivative-1)
 
 def brute_force(a, b, n, minx, miny) :
     print('brute_force:')
